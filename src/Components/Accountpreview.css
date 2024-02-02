@@ -1,0 +1,125 @@
+.Accountpreview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0px;
+}
+
+.Accountpreview-inner-container {
+    width: 100%;
+    max-width: 1100px; /* Set maximum width */
+}
+
+.Accountpreview-inner-container h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 34px;
+}
+
+.Accountpreview-inner-container p {
+    color: gray;
+}
+
+.Accountpreview-container {
+    display: flex;
+    /* flex-wrap: wrap; Allow items to wrap to the next line on smaller screens */
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.Accountpreview-right-container {
+    width: 400px;
+    /* height: 150px; */
+    background-color: #242526;
+    border-radius: 15px;
+    display: flex;
+    padding: 30px 20px;
+    flex-direction: column;
+}
+
+.Accountpreview-left-container {
+    width: 700px;
+    /* height: 150px; */
+    background-color: #202948;
+    border-radius: 20px;
+    display: flex;
+    /* justify-content: center; */
+    padding: 30px 20px;
+    /* align-items: start; */
+    flex-direction: column;
+}
+
+
+.Accountpreview-left-container {
+    background-color: #202948;
+}
+
+.Accountpreview-right-container {
+    background-color: #242526;
+}
+
+.Accountpreview-left-container h4,
+.Accountpreview-right-container h4 {
+    color: white;
+    font-size: 17px;
+    word-spacing: 1px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.input-and-button {
+    display: flex;
+    gap: 20px;
+}
+
+.input-and-button input {
+    width: 100%; /* Use full width */
+    max-width: 500px; /* Set maximum width */
+    height: 45px;
+    border-radius: 10px;
+    padding-left: 20px;
+    color: white;
+    background-color: #373F5B;
+    border: 1px solid rgb(115, 115, 233);
+}
+
+.input-and-button button {
+    width: 100%; /* Use full width */
+    max-width: 120px; /* Set maximum width */
+    height: 45px;
+    font-weight: 800;
+    border-radius: 10px;
+    color: white;
+    background-color: #406AFF;
+}
+
+.Accountpreview-right-container button {
+    height: 45px;
+    font-weight: 800;
+    border-radius: 10px;
+    color: white;
+    width: 100%; /* Use full width */
+    max-width: 120px; /* Set maximum width */
+    background-color: #3A3B3C;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+
+    .input-and-button{
+        flex-direction: column; /* Adjust layout for smaller screens */
+
+    }
+
+    .Accountpreview-container {
+        flex-direction: column; /* Stack items on smaller screens */
+    }
+
+    .Accountpreview-left-container,
+    .Accountpreview-right-container {
+        width: 100%; /* Use full width on smaller screens */
+        margin-bottom: 20px;
+    }
+}

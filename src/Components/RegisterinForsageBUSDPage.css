@@ -1,0 +1,149 @@
+.RegisterinForsageBUSDPage-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../public/image/blue-blur.png);
+    background-repeat: round;
+    background-size: cover;
+    padding: 40px 20px;
+
+}
+
+.RegisterinForsageBUSDPage-inner-container {
+    width: 80%;
+    display: flex;
+    /* flex-wrap: wrap;
+    max-width: 1200px;  */
+    justify-content: space-between;
+    gap: 30px;
+}
+
+@media (max-width:450px) {
+    .RegisterinForsageBUSDPage-inner-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .whatisGroways {
+        margin-top: 100px;
+        width: 80%;
+        height: 200px;
+        background-color: transparent;
+        background-position: center;
+        /* background: url(../../public/image/hqdefault.jpg) no-repeat center; */
+        background-repeat: repeat;
+        background-size: cover;
+    }
+
+    .RegisterinForsageBUSDPage-inner-right-container {
+        padding-top:50px !important;
+    }
+}
+
+.RegisterinForsageBUSDPage-right-container,
+.RegisterinForsageBUSDPage-left-container {
+    width: 100%;
+}
+
+.RegisterinForsageBUSDPage-left-container {
+    line-height: 50px;
+}
+
+.Heading {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.Upline-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Upline-input label {
+    color: gray;
+}
+
+.Upline-input input {
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #313339;
+    border: 1px solid rgb(35, 90, 241);
+}
+
+.five-li ul li {
+    color: rgb(81, 235, 81);
+}
+
+.check-again-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    width: 100%;
+    max-width: 130px;
+    height: 45px;
+    color: white;
+    padding: 10px;
+    background-color: #406AFF;
+}
+
+.check-again-div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.RegisterinForsageBUSDPage-inner-right-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100% !important;
+    min-height: 95vh;
+    border-radius: 20px;
+    background-color: hsla(0, 0%, 100%, .1);
+    padding: 20px;
+}
+
+.RegisterinForsageBUSDPage-inner-right-container h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.5;
+}
+
+.readguied {
+    margin: 20px 0px;
+}
+
+.readguied button {
+    width: 100%;
+    max-width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: rgb(219, 51, 51);
+}
+
+.whatisGroways {
+    margin-top: 100px;
+    width: 100%;
+    height: 200px;
+    background-color: transparent;
+    background-position: center;
+    background: url(../../public/image/hqdefault.jpg) no-repeat center;
+    background-size: cover;
+}

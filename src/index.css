@@ -1,0 +1,405 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+/* body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: left;
+  background-color: #080824;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Montserrat, sans-serif";
+  letter-spacing: 0.6px;
+} */
+
+/* ol.steps li:first-child::after {
+  content: counter(numbers, decimal);
+  counter-increment: numbers;
+  box-sizing: border-box;
+  left: -130px;
+  top: -30px;
+  color: #fff;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 50px;
+  padding-top: 2.5rem;
+  text-align: center;
+  background: url(./Images/number.png) no-repeat;
+  width: 130px;
+  height: 130px;
+} */
+/* ol.steps li:last-child::after {
+  background: url(./Images/number.png) no-repeat;
+} */
+
+ol.steps li:before,
+ol.steps li:after {
+  position: absolute;
+}
+
+.steps li {
+  position: relative;
+  margin: 0.75rem 0 1.25rem 1.875rem;
+  list-style: outside none none;
+  font-size: 0.875rem;
+}
+
+
+
+ol.steps {
+  counter-reset: numbers;
+  list-style-type: none;
+}
+
+ol.steps li {
+  position: relative;
+  margin: 0.75rem 0 1.25rem 1.875rem;
+  list-style: none;
+  font-size: 0.875rem;
+}
+
+ol.steps li:before {
+  position: absolute;
+  content: counter(numbers, decimal);
+  counter-increment: numbers;
+  box-sizing: border-box;
+  left: -130px;
+  top: -30px;
+  color: #fff;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 50px;
+  padding-top: 2.5rem;
+  text-align: center;
+  width: 130px;
+  height: 130px;
+  background: url(./Images/number.png) no-repeat;
+
+}
+
+ol.steps li:after {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 130px;
+  height: 130px;
+}
+
+.step:nth-child(1):after {
+  background-image: url('./Images/number.png');
+}
+
+.step:nth-child(2):after {
+  background-image: url('./Images/number.png');
+}
+
+.step:nth-child(3):after {
+  background-image: url('./Images/number.png');
+}
+
+.step:nth-child(4):after {
+  background-image: url('./Images/number.png');
+}
+
+
+.homePageBtnHover {
+  background-color: "#f1552c" !important;
+}
+
+
+
+
+
+
+
+
+.homePageBtnHover {
+  background-color: "#f1552c" !important;
+}
+
+/* .abc{
+  background-image: url("https://img.freepik.com/free-vector/police-pursue-catch-thief-holding-bag-money-illustration_33070-5721.jpg?size=626&ext=jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+} */
+
+/* Navbar.css */
+
+
+
+.footer-links:hover {
+  color: #4361EE !important ;
+  font-weight: 500;
+}
+.social-links:hover {
+  background-color: #4361EE;
+}
+
+
+
+
+.dappssixthsec {
+  max-width: 1500px;
+  margin: auto;
+  background-color: #e4edf3;
+  padding: 40px 0;
+}
+
+.dappssixthsec h2 {
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+  padding: 10px 0;
+  color: #4cc9f0;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.dappssixthsec>h2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 3px;
+  background-color: #4cc9f0;
+  transition: all 2s;
+}
+
+.dappssixthsec-row {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  column-gap: 20px;
+}
+
+.dappssixthsec-box {
+  flex: 0 0 33.33333%;
+  padding: 15px 25px;
+  box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 15%);
+  margin-bottom: 15px;
+  transition: 0.5s;
+  background-color: #fff;
+}
+
+.dappssixthsec-box:hover {
+  transform: translateY(-10px);
+}
+
+.dappssixthsec-box img {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.dappssixthsec-box h3 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #002245;
+}
+
+.dappssixthsec-box p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #404d60;
+}
+
+
+
+
+
+.dappsUnisec {
+  max-width: 1500px;
+  margin: auto;
+  background-color: #e4edf3;
+  padding: 40px 0;
+}
+
+.dappsUnisec h2 {
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+  padding: 10px 0;
+  color: #4cc9f0;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.dappsUnisec>h2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 3px;
+  background-color: #4cc9f0;
+  transition: all 2s;
+}
+
+.dappsUnisec-row {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  column-gap: 10px;
+
+}
+
+.dappsUnisec-box {
+  flex: 0 0 20%;
+  /* padding: 15px 25px; */
+  box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 15%);
+  margin-bottom: 15px;
+  transition: 0.5s;
+  background-size: 100% 100%;
+  background-position: center;
+  position: relative;
+ min-height: 180px;
+  /* background-color: #fff; */
+  
+}
+.dappsUnisec-box >div {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.582);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  padding: 5px;
+}
+.dappsUnisec-box1{
+  background-image: url("./Images/harvard.jpg");
+}
+.dappsUnisec-box2{
+  background-image: url("./Images/MIT.jpg");
+}
+.dappsUnisec-box3{
+  background-image: url("./Images/stanford.jpg");
+}
+.dappsUnisec-box4{
+  background-image: url("./Images/Oxford.jpg");
+}
+.dappsUnisec-box5{
+  background-image: url("./Images/Cambridge.jpg");
+}
+.dappsUnisec-box6{
+  background-image: url("./Images/california.jpg");
+}
+.dappsUnisec-box7{
+  background-image: url("./Images/Zurich.jpg");
+}
+.dappsUnisec-box8{
+  background-image: url("./Images/National\ University\ of\ Singapore.jpg");
+}
+.dappsUnisec-box9{
+  background-image: url("./Images/University\ of\ Tokyo.jpg");
+}
+.dappsUnisec-box10{
+  background-image: url("./Images/Princeton\ University.jpg");
+}
+
+
+.dappsUnisec-box:hover {
+  transform: translateY(-10px);
+}
+
+.dappsUnisec-box:hover > div {
+  display: block;
+  transition: 0.5s;
+}
+
+.dappsUnisec-box img {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.dappsUnisec-box >div>h3 {
+  text-align: center;
+  font-size: 20px;
+ 
+  color: #ffffff;
+  
+}
+
+.dappsUnisec-box p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #404d60;
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+ 
+  .dappsfourthsec,
+  .dappssixthsec {
+      padding: 50px 20px;
+      margin: 0;
+  }
+  .dappsfourthsec-bigbox,
+  .dappssixthsec-row {
+      flex-wrap: wrap;
+  }
+  .dappsfourthsec-box,
+  .dappssixthsec-box {
+      flex: 0 0 100%;
+  }
+  .dappssixthsec-row {
+      width: 100%;
+  }
+  .dappsfourthsec,
+  .dappsUnisec {
+      padding: 50px 20px;
+      margin: 0;
+  }
+  .dappsfourthsec-bigbox,
+  .dappsUnisec-row {
+      flex-wrap: wrap;
+  }
+  .dappsfourthsec-box,
+  .dappsUnisec-box {
+      flex: 0 0 100%;
+  }
+  .dappsUnisec-row {
+      width: 100%;
+  }
+ 
+}
+
+
+
+.team{
+
+}
+.team:hover > .showDetails{
+ opacity: 100 !important;
+}

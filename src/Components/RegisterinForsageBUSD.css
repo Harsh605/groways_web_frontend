@@ -1,0 +1,75 @@
+
+.welcome-container{
+    margin-top: 100px !important;
+}
+.register-inner-div {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 25px !important;
+}
+
+.register-left-div {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.register-right-div {
+    /* Adjust as needed */
+}
+
+.Join-groways button {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    height: 40px;
+    background-color: black;
+    transition: all 250ms ease-in-out;
+}
+
+.Join-groways button:hover {
+    background-color: rgb(39, 38, 38);
+}
+
+.watch-now-button-1 button {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms ease-in-out;
+    width: 150px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    height: 40px;
+    background-color: hsla(0, 0%, 100%, .1);
+}
+
+.watch-now-button-1 button:hover {
+    background-color: hsla(0, 4%, 79%, 0.1);
+
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .register-inner-div {
+        flex-direction: column-reverse;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .Join-groways button,
+    .watch-now-button-1 button {
+        width: 100%;
+        /* Full width on smaller screens */
+        margin-top: 10px;
+        /* Add some spacing between buttons */
+    }
+}

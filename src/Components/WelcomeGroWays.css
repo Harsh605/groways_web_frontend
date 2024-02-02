@@ -1,0 +1,109 @@
+/* Default styles for larger screens */
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px !important;
+    margin: 100px 0px 40px 0px !important;
+}
+
+.welcome-inner-div {
+    background-color: #406AFF;
+    display: flex;
+    width: 100%;
+    /* Use full width */
+    max-width: 1100px;
+    /* Set maximum width */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid gray;
+    padding: 0px 20px;
+    border-radius: 20px;
+}
+
+.welcome-left-div {
+    width: 100%;
+    /* Use full width */
+    max-width: 700px;
+    /* Set maximum width */
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.welcome-left-div h2 {
+    font-size: 30px;
+    color: white;
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+.welcome-left-div p {
+    color: #A0B5FF;
+}
+
+.welcome-right-div {
+    display: flex;
+    justify-content: start !important;
+    width: 100%;
+    /* Use full width */
+    max-width: 800px;
+    /* Set maximum width */
+}
+
+.welcome-right-div .image {
+    background-image: url(../../public/image/wallet-icon.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    /* Set a fixed height or use padding-top to maintain aspect ratio */
+}
+
+.tow-buttons {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 20px;
+}
+
+.watch-now-button button {
+    width: 100%;
+    /* Use full width */
+    max-width: 170px;
+    /* Set maximum width */
+    border-radius: 50px;
+    border: 1px solid greenyellow;
+    color: white;
+    padding: 14px;
+}
+
+.watch-now-button button:hover {
+    background: linear-gradient(0deg, rgba(44, 241, 54, 0.5) 0%, transparent 100%) !important;
+}
+
+
+/* .border-color-custom{
+    border: 1px solid rgb(153, 51, 119) !important;
+}
+.border-color-custom:hover {
+    background: linear-gradient(0deg, rgba(44, 218, 241, 0.5) 0%, transparent 100%) !important;
+} */
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .tow-buttons {
+        flex-direction: column;
+    }
+
+    .welcome-inner-div {
+        flex-direction: column;
+        /* Stack items on smaller screens */
+    }
+
+    .tow-buttons {
+        flex-direction: row;
+        /* Change back to row on smaller screens */
+    }
+}

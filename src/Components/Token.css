@@ -1,0 +1,201 @@
+
+.tknTop h5 {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .stickChart > div > span {
+    position: absolute;
+    top: -30px;
+    background: red;
+    padding: 1px 10px;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    background: #000;
+    color: #fff;
+    box-shadow: 0 0px 20px -3px #ffffff36;
+    font-size: 14px;
+    width: max-content;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  
+  .stickChart > div:hover > span {
+    opacity: 1;
+    visibility: visible;
+  }
+  .tknTop h5 span {
+    color: #6c757d;
+    margin-left: 30px;
+  }
+  .tknTop ul {
+    display: block;
+  }
+  
+  .tknTop ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .recharts-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .the-bar-chart {
+    width: 100%;
+    height: 100% !important;
+    margin: 40px 0;
+  }
+  
+  .the-bar-chart h5 {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .the-bar-chart .recharts-wrapper {
+    padding-top: 100px;
+    width: 100% !important;
+    /*height: 800px !important;*/
+  }
+  
+  .the-bar-chart .recharts-wrapper > svg.recharts-surface {
+    width: 100%;
+    height: 100%;
+    font-size: 6px;
+  }
+  
+  .the-bar-chart .recharts-wrapper > .recharts-legend-wrapper {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+  .proof_of_lock {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .proof_of_lock h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .proof_of_lock-btns > button {
+    margin: 0 30px;
+  }
+  .tkn_distribution_wrp {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+ 
+  
+  ul.ul_data-list li > div {
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+  }
+  
+  ul.ul_data-list li > div small {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .mainPieCgar {
+    width: max-content;
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .mainPieCgar p {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    max-width: 125px;
+  }
+  
+  .mainPieCgar p small {
+    font-size: 65%;
+    display: block;
+    color: #bde0a2;
+  }
+  
+  .customTooltip {
+    width: auto;
+    height: auto;
+    background: rgb(246, 246, 246);
+    position: absolute;
+    top: 5355px;
+    left: 412px;
+    z-index: 9999;
+    box-shadow: rgb(255 255 255 / 56%) 0px 0px 14px;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-size: 14px;
+    transition: all 0.3s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    left: 0;
+  }
+  .customTooltip .active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .tokenomics-step {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .tkn-step {
+    max-width: 290px;
+    margin-bottom: 50px;
+    padding: 0 15px;
+  }
+  
+  .tokenomics-step img {
+    max-height: 80px;
+  }
+  
+  .tokenomics-step h5 {
+    font-size: 22px;
+    color: #fff;
+    margin-top: 15px;
+  }
+  
+  .tokenomics-step p {
+    color: #979ea5;
+    margin: 0;
+    line-height: 22px;
+  }
+  
+  /* @media only screen and (max-width: 767px) {
+    .tokenomics-step {
+      flex-wrap: wrap;
+    }
+    .tokenomics-step img {
+      max-height: 60px;
+    }
+  } */
+  
