@@ -1,18 +1,24 @@
 import {
-    useConnectModal,
-  } from '@rainbow-me/rainbowkit';
-  
-  const YourApp = ({classes,style}) => {
-    const { openConnectModal } = useConnectModal();
-    return (
-      <>
-        {openConnectModal && (
-          <button onClick={openConnectModal} style={style}  className={classes} type="button">
+  useConnectModal,
+} from '@rainbow-me/rainbowkit';
+
+const YourApp = ({ classes, style }) => {
+  const { openConnectModal } = useConnectModal();
+  return (
+    <>
+      {/* {openConnectModal && ( */}
+      {/* <button onClick={openConnectModal} style={style}  className={classes} type="button">
             Connect Now
-          </button>
-        )}
-      </>
-    );
-  };
-  
-  export default YourApp
+          </button> */}
+      <a href="https://user.groways.io">
+        <button style={style} className={classes} type="button">
+          Connect Now
+        </button>
+      </a>
+
+      {/* )} */}
+    </>
+  );
+};
+
+export default YourApp
