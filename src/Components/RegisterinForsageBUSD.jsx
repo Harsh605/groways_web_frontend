@@ -25,7 +25,7 @@ const RegisterinForsageBUSD = () => {
                             <div className='Join-groways'>
                                 <a style={{ textDecoration: 'none' }} href="https://user.groways.io">
                                 {/* <button onClick={()=>navigate('./RegisterinForsageBUSDPage')}>Join GroWays</button> */}
-                                <button onClick={()=>navigate('./RegisterinForsageBUSDPage')}>Join GroWays</button>
+                                <button >Join GroWays</button>
                                 </a>
                             </div>
                             <div className='watch-now-button-1'>
@@ -33,6 +33,8 @@ const RegisterinForsageBUSD = () => {
                                 <button>Watch Tutorial</button>
                                 </a>
                             </div>
+                           
+
 
                         </div>
                     </div>

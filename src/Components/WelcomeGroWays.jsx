@@ -38,6 +38,9 @@ const WelcomeGroWays = () => {
                             <div className='watch-now-button'>
                                 <button>Watch Tutorial</button>
                             </div>
+                            <div className='watch-now-button'>
+                                <button>Comming Soon</button>
+                            </div>
                             <div>
                                 <a className="btn btn-primary bg-transparent border-4  border-color-custom" style={{ borderColor: "#f1552c" }} onClick={handleOpenBuyPopup}>Buy Now</a>
 
