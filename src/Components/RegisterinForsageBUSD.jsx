@@ -23,7 +23,8 @@ const RegisterinForsageBUSD = () => {
                             You can use this Wallet (0xBb3D...150d) to register as a new member. Watch a tutorial to learn more                        </p>
                         <div className='tow-buttons'>
                             <div className='Join-groways'>
-                                <a style={{ textDecoration: 'none' }} href="https://user.groways.io">
+                                {/* <a style={{ textDecoration: 'none' }} href="https://user.groways.io"> */}
+                                <a style={{ textDecoration: 'none' }} href="#">
                                 {/* <button onClick={()=>navigate('./RegisterinForsageBUSDPage')}>Join GroWays</button> */}
                                 <button >Join GroWays</button>
                                 </a>
