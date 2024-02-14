@@ -91,7 +91,7 @@
     }
 
     .platform-left-container .platform-left-box {
-        width: 154%;
+        width: 100%;
         overflow-x: scroll !important;
 
     }
@@ -102,7 +102,7 @@
 
 
 .platform-left-container {
-    width: 65%;
+    width: 100%;
 
 }
 

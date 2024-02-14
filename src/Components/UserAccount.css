@@ -277,7 +277,7 @@
     }
 
     .platform-left-container .platform-left-box {
-        width: 154%;
+        /* width: 154%; */
         overflow-x: scroll;
 
     }
@@ -311,7 +311,7 @@
 
 
 .platform-left-container {
-    width: 65%;
+    width: 100%;
 
 }
 
@@ -884,7 +884,7 @@ height: 136vh;
     }
 
     .first-container-box-left {
-        width: 400px !important;
+        width: 250px !important;
         /* height: 230px; */
     }
 }
