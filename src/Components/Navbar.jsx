@@ -5,6 +5,7 @@ import WagmiUtils from '../blockchain/WagmiUtils';
 import YourApp from '../blockchain/YourApp';
 import BuyPopUp from './BuyNowPopUp';
 import { useAccount } from 'wagmi';
+import logo from "../Images/Growayslogo1-preview.png"
 
 const Navbar = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
@@ -61,7 +62,7 @@ const Navbar = () => {
         </nav> */}
         <nav className="navbars ">
           <div className='Navbar-left-header'>
-            <img src="image/Growayslogo1-preview.png" alt="" />
+            <img src={logo} alt="" />
           </div>
 
           <div>

@@ -4,9 +4,11 @@ import { Container, Row } from "reactstrap";
 import './UserAccount.css'
 import { useContext } from "react";
 import { useNavigate , useParams } from 'react-router-dom';
-import { fetchOneUserData, fetchPackageInfoForDashboardBox, fetchSlotsInfoForDashboardBox } from "../api";
+import { fetchAllActivities, fetchOneUserData, fetchPackageInfoForDashboardBox, fetchSlotsInfoForDashboardBox, fetchTeamInfo } from "../api";
 import Navbar from './Navbar'
 import Sidebar from "./Sidebar";
+import { IoEyeSharp } from "react-icons/io5";
+import { CiShare1 } from "react-icons/ci";
 // import { useParams } from 'react-router-dom';
 
 const UserAccount = () => {
@@ -24,6 +26,8 @@ const UserAccount = () => {
   const [id , setId] = useState('');
   const [address , setAddress] = useState('');
   const [profilePicture , setProfilePicture] = useState('')
+  const [teamLength , setTeamLength] = useState();
+  const [platformData, setPlatformData] = useState([])
  
 //   const {address} = useAccount();
 //   const {userData} = useContext(MyContext);
@@ -31,12 +35,14 @@ const UserAccount = () => {
   const [listOfALLPackages , setListOfAllPackages] = useState([]);
   const [listOfAllSlots , setListOfAllSlots] = useState([]);
 
-
+  const [visibleItems, setVisibleItems] = useState(15);
   
 
 //   const [isSeeMoreVisible, setIsSeeMoreVisible] = useState(false);
 //   const [isButtonVisible, setIsButtonVisible] = useState(true);
-
+const showMoreItems = () => {
+    setVisibleItems(visibleItems + 15); // Increase the number of visible items
+  };
     useEffect(()=>{
         const fetchData = async()=>{
             // let data = {
@@ -66,6 +72,10 @@ const UserAccount = () => {
             try{
                 const response = await fetchPackageInfoForDashboardBox(data);
                 setListOfAllPackages([...response.allPackagesOfUser]);
+                const response1 = await fetchTeamInfo(data1);
+                setTeamLength(response1.usersDetails.length)
+                const response3 = await fetchAllActivities();
+                setPlatformData(response3.data);
             }catch(error){
 
             }
@@ -95,6 +105,42 @@ const UserAccount = () => {
         fetchAllSlots();
         window.scrollTo(0, 0);
     }, [userId])
+
+    const formatTimeDifference = (createdAt) => {
+        const currentDate = new Date();
+        const createdAtDate = new Date(createdAt);
+    
+        const timeDifferenceInMilliseconds = currentDate - createdAtDate;
+        const timeDifferenceInSeconds = Math.floor(timeDifferenceInMilliseconds / 1000);
+        const minutes = Math.floor(timeDifferenceInSeconds / 60);
+    
+        if (minutes < 1) {
+          return 'Just now';
+        } else if (minutes < 60) {
+          return minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
+        } else {
+          const hours = Math.floor(minutes / 60);
+          const remainingMinutes = minutes % 60;
+    
+          if (hours < 24) {
+            return hours === 1 ? `1 hour ago` : `${hours} hours ago`;
+          } else {
+            const days = Math.floor(hours / 24);
+            const remainingHours = hours % 24;
+    
+            if (remainingMinutes === 0 && remainingHours === 0) {
+              return days === 1 ? `1 day ago` : `${days} days ago`;
+            } else if (remainingMinutes === 0) {
+              return days === 1 ? `1 day ${remainingHours} hours ago` : `${days} days ${remainingHours} hours ago`;
+            } else if (remainingHours === 0) {
+              return days === 1 ? `1 day ${remainingMinutes} minutes ago` : `${days} days ago`;
+            } else {
+              return days === 1 ? `1 day ${remainingHours} hours ago` : `${days} days ${remainingHours} hours ago`;
+            }
+          }
+        }
+      }
+
     return (
         // <div style={{background : "white" , height : "100vh"}}>
         <div>
@@ -171,14 +217,14 @@ const UserAccount = () => {
                 <div className="dashboard-container-1" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px' }}>
                     {/* <div className="dashboard-left-box" > */}
 
-                        {/* <div className="first-container-box-left">
+                        <div className="first-container-box-left">
                             <b>Team</b>
-                            <h5>2</h5>
+                            <h5>{teamLength}</h5>
                             <div className="icon-redius" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <div className="zero-number"> 0</div>
                                 <div className="reload-icon"> <img src="/images/activity_white.webp" alt="" /></div>
                             </div>
-                        </div> */}
+                        </div>
                         <div className="first-container-box-left" style={{marginLeft : "30px"}}>
                             <b>Total Referral</b>
                             <h5>{totalReferrals}</h5>
@@ -407,6 +453,178 @@ const UserAccount = () => {
                                
                             </div>
                         </div>
+                        <div className="platform-heading">
+              <span>Platform recent activity</span>
+            </div>
+
+            <div className="platform-container-main overscroll-y-container" style={{marginLeft : "130px"}}>
+              <div className="platform-left-container">
+                <div className="platform-left-box" >
+                  <div></div>
+                  {platformData.slice(0, visibleItems).map((data, index) => (   //class is currently data.className
+                    <div className="table-in-row-1" key={index}>
+                      <div className="table-left-div">
+                        <div className="table-user-icon" style={{ fontSize: '15px' }}>
+                          {/* {data.usericon} */}
+                        </div>
+                        <div className='NewUser'>
+
+                          <div className="new-user-heading">
+                            <span>{data.amount} USDT Transfer from  </span>
+                          </div>
+                          <div className="ID-box">ID {data.fromUserId}</div>
+                          <div className="new-user-heading">
+                            <span>TO</span>
+                          </div>
+                          <div className="ID-box">ID {data.toUserId}</div>
+                        </div>
+                      </div>
+
+                      <div className="table-right-div">
+                        <span>
+                          <CiShare1 size={'18px'} style={{ fontWeight: '800', cursor: 'pointer' }} onClick={() => window.open(`https://testnet.bscscan.com/tx/${data.transactionHash}`, '_blank')} />
+                        </span>
+                        <span>{formatTimeDifference(data.createdAt)}</span>
+                      </div>
+                    </div>
+
+                  ))}
+
+                  {/* {platformdata.slice(0, visibleItems).map((data, index) => (
+
+                    <div className="table-in-row-1" key={index}>
+                      <div className="table-left-div">
+                        <div className="table-user-icon">
+                          <PersonAddAltRoundedIcon sx={{ fontSize: '16px' }} />
+                        </div>
+                        <div className="ID-box">ID {data.UserId}</div>
+                        <div className="new-user-heading">
+                          <span>{data.newuser}</span>
+                        </div>
+                      </div>
+
+                      <div className="table-right-div">
+                        <span>
+                          <CiShare1 size={'18px'} style={{ fontWeight: '800' }} />
+                        </span>
+                        <span>{data.jioningtiming}</span>
+                      </div>
+                    </div>
+
+                  ))} */}
+
+
+
+
+                  {platformData.length > visibleItems && (
+                    <div className="see-more-div">
+                      <div className="see-more-button" onClick={showMoreItems}>
+
+                        <IoEyeSharp />  See More
+                      </div>
+                    </div>
+                  )}
+
+                </div>
+
+              </div>
+
+              <div className="platform-right-container">
+                {/* <div className="platform-right-box-1" > */}
+                {/* <div>
+                    <span className="right-box-1-heading">
+                      Members total
+                    </span>
+                  </div> */}
+
+                {/* <div>
+                    <div style={{ color: 'white', fontSize: '23px', fontWeight: '700' }}>
+                      <span>1452 555</span>
+                    </div>
+                    <div style={{ color: 'lightgreen', fontSize: '17px' }}>
+                      <span><NorthIcon sx={{ fontSize: '16px' }} />554</span>
+                    </div>
+                  </div> */}
+                {/* </div> */}
+
+                {/* <div className="platform-right-box-2"> */}
+                {/* <div>
+                    <span className="right-box-1-heading">
+                      Members received
+                    </span>
+                  </div> */}
+
+                {/* <div style={{ borderBottom: '1px solid #363737', paddingBottom: '5px' }}>
+                    <div style={{ color: 'white', fontSize: '23px', fontWeight: '700' }}>
+                      <span> 1452 555</span>
+                    </div>
+                    <div style={{ color: 'lightgreen', fontSize: '17px' }}>
+                      <span>
+                       
+                        + 554</span>
+                    </div>
+                  </div> */}
+
+                {/* <div>
+                    <div style={{ color: 'white', fontSize: '23px', fontWeight: '700' }}>
+                      <span>1452 555</span>
+                    </div>
+                    <div style={{ color: 'lightgreen', fontSize: '17px' }}>
+                      <span>
+                        
+                        + 554</span>
+                    </div>
+                  </div> */}
+                {/* </div> */}
+
+                {/* <div className="platform-right-box-3">
+                  <div>
+                    <span className="right-box-3-heading-main">
+                      Groways USDT Contracts
+                    </span>
+                  </div> */}
+                 
+
+                  {/* <div>
+                    <span className="right-box-1-heading">
+                      Transactions made
+                    </span>
+                  </div>
+
+                  <div style={{ borderBottom: '1px solid #363737', paddingBottom: '5px' }}>
+                    <div style={{ color: 'white', fontSize: '23px', fontWeight: '700' }}>
+                      <span>1452 555</span>
+                    </div>
+                    <div style={{ color: 'lightgreen', fontSize: '17px' }}>
+                      <span>
+                       
+                        + 554</span>
+                    </div>
+                  </div> */}
+
+                  {/* <div>
+                    <span className="right-box-1-heading">
+                      Turnover, BUSD
+                    </span>
+                  </div>
+
+                  <div style={{ borderBottom: '1px solid #363737', paddingBottom: '5px' }}>
+                    <div style={{ color: 'white', fontSize: '23px', fontWeight: '700' }}>
+                      <span>1452 555</span>
+                    </div>
+                    <div style={{ color: 'lightgreen', fontSize: '17px' }}>
+                      <span>
+                        
+                        + 554</span>
+                    </div>
+                  </div> */}
+
+                {/* </div> */}
+
+
+              </div>
+
+            </div>
                     {/* </div> */}
                 </Row> 
 
