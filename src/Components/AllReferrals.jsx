@@ -5,6 +5,7 @@ import { Button, Input, Modal } from 'reactstrap';
 import { Fade } from 'react-reveal';
 import { fetchReferralList } from '../api';
 import {useParams} from 'react-router-dom';
+import "./table.css"
 
 const AllReferrals = () => {
       const {address} = useParams();
@@ -224,17 +225,10 @@ return (
                 {/* </div> */}
                 <hr />
                 <div className='table-responsive'>
-                    <div className='card'>
-                        <div className='card-body'>
-                            {/* <div className='card-title' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <h4 className='mb-0'>My Referral</h4>
-                                <div className='date-inputs' style={{ display: 'flex', gap: '10px', alignItems: 'center', color: '#96979A' }}>
-                                    from:-
-                                    <Input type='date' onChange={(e) => setStartDate(e.target.value)} />
-                                    To:-
-                                    <Input type='date' onChange={(e) => setEndDate(e.target.value)} />
-                                </div>
-                            </div> */}
+                <div style={{ background: "transparent" }} className="card">
+                <p style={{ fontSize: "25px", color: "white" }}>All Referrals</p>
+                <div style={{ background: "white" }} className="card-body">
+                           
                             <hr />
                             <div className='table-responsive'>
                                 <table id='myTable' className='table table-striped table-bordered' style={{ width: '100%' }}>

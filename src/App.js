@@ -15,16 +15,16 @@ const App = () => {
     <Router>
       <Routes>
         {/* Routes for the AuthLayout */}
-          <Route path = '/users/:userId' element = {<UserAccount />} />
-          <Route path = '/allusers' element = {<AllUsers />} />
-          <Route path = '/referrals/:address' element= {<AllReferrals />} />
-        <Route path={`/*` } element={<AuthLayout />}>
+        <Route path='/users/:userId' element={<UserAccount />} />
+        <Route path='/allusers' element={<AllUsers />} />
+        <Route path='/referrals/:address' element={<AllReferrals />} />
+        <Route path={`/*`} element={<AuthLayout />}>
           <Route path="RegisterinForsageBUSDPage" element={<RegisterinForsageBUSDPage />} />
         </Route>
 
         {/* Routes for the Layout */}
-          <Route index element={<Home />} />
-        </Routes>
+        <Route index element={<Home />} />
+      </Routes>
     </Router>
   );
 };

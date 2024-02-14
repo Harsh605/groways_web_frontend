@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bf0c92e2.css",
-    "main.js": "/static/js/main.28425024.js",
+    "main.css": "/static/css/main.0421d131.css",
+    "main.js": "/static/js/main.54b80ba7.js",
     "static/js/180.daf767db.chunk.js": "/static/js/180.daf767db.chunk.js",
     "static/js/557.c2394382.chunk.js": "/static/js/557.c2394382.chunk.js",
     "static/js/479.241cacf1.chunk.js": "/static/js/479.241cacf1.chunk.js",
@@ -85,8 +85,8 @@
     "index.html": "/index.html",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "static/media/Stellar-core.svg": "/static/media/Stellar-core.25f9f0e38e2b545484442c7b80e047f5.svg",
-    "main.bf0c92e2.css.map": "/static/css/main.bf0c92e2.css.map",
-    "main.28425024.js.map": "/static/js/main.28425024.js.map",
+    "main.0421d131.css.map": "/static/css/main.0421d131.css.map",
+    "main.54b80ba7.js.map": "/static/js/main.54b80ba7.js.map",
     "180.daf767db.chunk.js.map": "/static/js/180.daf767db.chunk.js.map",
     "557.c2394382.chunk.js.map": "/static/js/557.c2394382.chunk.js.map",
     "479.241cacf1.chunk.js.map": "/static/js/479.241cacf1.chunk.js.map",
@@ -127,7 +127,7 @@
     "425.ac9a2cde.chunk.js.map": "/static/js/425.ac9a2cde.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf0c92e2.css",
-    "static/js/main.28425024.js"
+    "static/css/main.0421d131.css",
+    "static/js/main.54b80ba7.js"
   ]
 }
