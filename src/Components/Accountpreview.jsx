@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Accountpreview.css'
+import {useNavigate } from 'react-router-dom'
 
 const Accountpreview = () => {
+    const navigate = useNavigate();
+    const [userId , setUserId] = useState();
     return (
         <div className='Accountpreview-container'>
             <div className="Accountpreview-inner-container">
@@ -13,8 +16,8 @@ const Accountpreview = () => {
                     <div className="Accountpreview-left-container">
                         <h4>Enter ID or GroWays Wallet</h4>
                         <div className='input-and-button'>
-                            <input type="text" placeholder='example :54821' />
-                            <button> Preview</button>
+                            <input type="text" placeholder='example :54821' value={userId} onChange={(e)=>setUserId(e.target.value)} />
+                            <button onClick = {()=>{navigate(`/users/${userId}`)}}> Preview</button>
 
                         </div>
 
