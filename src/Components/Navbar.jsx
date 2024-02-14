@@ -62,7 +62,7 @@ const Navbar = () => {
         <nav className="navbars ">
           <div className='Navbar-left-header flex justify-center p-2'>
             {/* <p className="text-white text-lg pt-3" style={{fontFamily:"sans-serif"}}>Groways</p> */}
-            <img src="Growayslogo1-preview.png" alt="" />
+            <img src="/Growayslogo1-preview.png" alt="" />
           </div>
 
           <div>
