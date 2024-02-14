@@ -8,7 +8,13 @@ const Accountpreview = () => {
 
   const handlePreview = () => {
     if (userId.trim() !== "") {
-      navigate(`/users/${userId}`);
+      if (parseInt(userId) >= 502) {
+        // Check if userId is greater than or equal to 502
+        navigate(`/users/${userId}`);
+      } else {
+        // Handle the case when the input is less than 502
+        alert("You can't preview user IDs less than 502.");
+      }
     } else {
       // Handle the case when the input is empty
       alert("Please enter a valid ID or GroWays Wallet");

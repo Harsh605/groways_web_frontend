@@ -6,7 +6,7 @@ const TokenIntro = () => {
   return (
     <div id="ecosystem" className="abc bg-transparent md:mt-10 py-3 px-3 md:px-14 md:pt-24 md:px-28 sm:p-14  pb-0">
 
-      <h2 className='mt-5 mb-5 md:mb-10' style={{ textAlign: 'center', color: "#406AFF", fontWeight: "700" }}>Coming Soon...</h2>
+      <h2 className='mt-5 mb-5 md:mb-10' style={{ textAlign: 'center', color: "#406AFF", fontWeight: "700" }}>Project Ecosystem</h2>
       <div className="container sm:my-0 mx-auto md:px-6">
         <section className="sm:mb-0">
           <div className="flex flex-wrap">
