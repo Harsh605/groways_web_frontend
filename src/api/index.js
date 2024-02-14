@@ -77,3 +77,36 @@ export const fetchPackageInfoForDashboardBox = async(data)=>{
         }
     })
 }
+
+
+export const fetchTeamInfo = async(data1)=>{
+    return new Promise(async(resolve , reject)=>{
+        try{
+            const response =await axiosBase.get(`/api/users/fetchTeamMember/${data1.address}` , {
+                headers : {
+                    'Content-Type' : 'application/json',
+                }
+            })
+            resolve(response.data)
+        }catch(error){
+            reject(error);
+        }
+    })
+}
+
+export const fetchAllActivities = async()=>{
+    return new Promise(async(resolve , reject)=>{
+        try{
+            const response = await axiosBase.get(`api/users/fetchTransactionsFromContract` , {
+                headers:{
+                    'Content-Type' : 'application/json'
+                }
+            });
+            resolve(response.data);
+
+        }catch(error){
+            console.log(`error in fetch all activities in axios config : ${error.message}`)
+            reject(error);
+        }
+    })
+}

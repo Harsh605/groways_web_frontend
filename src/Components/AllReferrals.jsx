@@ -5,6 +5,8 @@ import { Button, Input, Modal } from 'reactstrap';
 import { Fade } from 'react-reveal';
 import { fetchReferralList } from '../api';
 import {useParams} from 'react-router-dom';
+import Navbar from './Navbar';
+
 
 const AllReferrals = () => {
       const {address} = useParams();
@@ -182,6 +184,7 @@ let filteredData = data;
 // }
 return (
     <Fragment>
+        <Navbar/>
         {/* <Breadcrumbs mainTitle='My Referral' parent='User Section' title='My Referral' /> */}
         <Container fluid={true}>
             <Fade top distance='2%' duration={700}>

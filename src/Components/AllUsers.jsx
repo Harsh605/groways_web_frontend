@@ -7,6 +7,8 @@ import { Button, Input, Modal, Container } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 import { Fade } from 'react-reveal';
 import { fetchUsersList } from '../api';
+import Navbar from './Navbar';
+
 // import { useAccount } from 'wagmi'
 // import { fetchUsersList } from '../../../../api/integrateConfig';
 
@@ -187,6 +189,7 @@ const AllUsers = () => {
 
 return (
     <Fragment>
+        <Navbar/>
         {/* <Breadcrumbs mainTitle='All User' parent='UserSection' title='All User' /> */}
         <Container fluid={true}>
             <Fade top distance='2%' duration={700}>
