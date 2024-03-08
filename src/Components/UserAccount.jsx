@@ -231,7 +231,7 @@ const UserAccount = () => {
           </div>
           <div className="first-container-box-left">
             <b>Total Profit</b>
-            <h5>{totalIncome}</h5>
+            <h5>{slotIncome + packageIncome + levelIncome + refferalIncome}</h5>
             <div
               className="icon-redius"
               style={{
