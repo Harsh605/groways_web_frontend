@@ -55,10 +55,10 @@ const Home = (props) => {
     <Needhelp/>
 
     {/* <SimpleDialogDemo/> */}
+    <Faq/>
     <Topbar/>
     {/* <SecondCompo/> */}
     {/* <EcoSystem/> */}
-    {/* <Faq/> */}
     {/* <FAQPresale/> */}
     {/* <Footer/> */}
     </div>

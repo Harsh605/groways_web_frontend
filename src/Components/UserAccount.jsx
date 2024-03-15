@@ -33,6 +33,7 @@ const UserAccount = () => {
   const [profilePicture, setProfilePicture] = useState("");
   const [teamLength, setTeamLength] = useState();
   const [platformData, setPlatformData] = useState([]);
+  const [referBy, setReferBy] = useState("");
 
   //   const {address} = useAccount();
   //   const {userData} = useContext(MyContext);
@@ -59,7 +60,11 @@ const UserAccount = () => {
       }
       try {
         const response = await fetchOneUserData(data);
+        console.log(response.user);
         setLevelIncome(response.user.levelIncome);
+        setListOfAllPackages(response.user.packageBought);
+        setListOfAllSlots(response.user.slotBought);
+        setReferBy(response.user.referBy);
         setPackageIncome(response.user.packageIncome);
         setSlotIncome(response.user.slotIncome);
         setRefferalIncome(response.user.refferalIncome);
@@ -74,8 +79,9 @@ const UserAccount = () => {
         };
         try {
           const response = await fetchPackageInfoForDashboardBox(data);
-          setListOfAllPackages([...response.allPackagesOfUser]);
+          // setListOfAllPackages([...response.allPackagesOfUser]);
           const response1 = await fetchTeamInfo(data1);
+          console.log(response1);
           setTeamLength(response1.usersDetails.length);
           const response3 = await fetchAllActivities();
           setPlatformData(response3.data);
@@ -84,13 +90,14 @@ const UserAccount = () => {
         console.log(`error in the page getting all the data`);
       }
     };
+    console.log("teamLength", teamLength);
     const fetchAllSlots = async () => {
       try {
         let data = {
           userId: userId,
         };
         const response = await fetchSlotsInfoForDashboardBox(data);
-        setListOfAllSlots([...response.slotsOfUser]);
+        // setListOfAllSlots([...response.slotsOfUser]);
       } catch (error) {
         console.log(
           `error in fetch all slots for dashboard function : ${error.message}`
@@ -152,30 +159,33 @@ const UserAccount = () => {
 
       <div className="welcome-container">
         <div
-          style={{ background: "#363e5c" }}
+          style={{ background: "#47a1ff" }}
           className="welcome-inner-div register-inner-div"
         >
           <div className="welcome-left-div register-left-div">
             <h2>
               {" "}
-              {id ? "ID " + id : ""} (
-              {address
-                ? address.slice(0, 7) + "..." + address.slice(38, 48)
-                : "0x0000...00000"}
-              )
+              {id ? "ID " + id : ""} ({name ? name : "Unknown"})
             </h2>
             <p>
               {address
                 ? address.slice(0, 7) + "..." + address.slice(38, 48)
-                : "0x0000...00000"}
+                : "0x0000...00000"}{" "}
+              <span>
+                (Refer By:{" "}
+                {referBy
+                  ? referBy.slice(0, 7) + "..." + referBy.slice(38, 48)
+                  : "0x0000...00000"}
+                )
+              </span>
             </p>
             <div className="tow-buttons">
               <div className="Join-groways">
                 <a style={{ textDecoration: "none" }}>
                   {/* <a style={{ textDecoration: 'none' }} href="#"> */}
                   {/* <button onClick={()=>navigate('./RegisterinForsageBUSDPage')}>Join GroWays</button> */}
-                  <button onClick={() => navigate("/allusers")}>
-                    All Users
+                  <button onClick={() => navigate(`/allusers/${address}`)}>
+                    All Teams
                   </button>
                 </a>
               </div>
@@ -205,7 +215,7 @@ const UserAccount = () => {
         style={{ padding: "0px 33px", margin: "0px 0px 40px 0px" }}
       >
         <div
-          style={{ background: "#363e5c" }}
+          style={{ background: "#47a1ff" }}
           className="welcome-inner-div register-inner-div"
         >
           <div className="first-container-box-left">
@@ -231,7 +241,11 @@ const UserAccount = () => {
           </div>
           <div className="first-container-box-left">
             <b>Total Profit</b>
-            <h5>{slotIncome + packageIncome + levelIncome + refferalIncome}</h5>
+            <h5>
+              {slotIncome + packageIncome + levelIncome + refferalIncome}{" "}
+              {slotIncome + packageIncome + levelIncome + refferalIncome > 0 &&
+                "$"}
+            </h5>
             <div
               className="icon-redius"
               style={{
@@ -250,7 +264,27 @@ const UserAccount = () => {
               </div>
             </div>
           </div>
-         
+          <div className="first-container-box-left">
+            <b>Total Team</b>
+            <h5>{teamLength}</h5>
+            <div
+              className="icon-redius"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <div style={{ color: "white" }} className="zero-number">
+                {" "}
+                0
+              </div>
+              <div className="reload-icon">
+                {" "}
+                <img src="/images/activity_white.webp" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -269,6 +303,7 @@ const UserAccount = () => {
                   {" "}
                   <span style={{ fontSize: "34px", fontWeight: "500" }}>
                     {refferalIncome}
+                    {refferalIncome >0 && "$"}
                   </span>
                 </div>
                 <div>
@@ -283,6 +318,7 @@ const UserAccount = () => {
                   {" "}
                   <span style={{ fontSize: "34px", fontWeight: "500" }}>
                     {levelIncome}
+                    {levelIncome >0 && "$"}
                   </span>
                 </div>
                 <div>
@@ -298,6 +334,7 @@ const UserAccount = () => {
                   {" "}
                   <span style={{ fontSize: "34px", fontWeight: "500" }}>
                     {packageIncome}
+                    {packageIncome>0 && "$"}
                   </span>
                 </div>
                 <div>
@@ -311,7 +348,7 @@ const UserAccount = () => {
                 <div>
                   {" "}
                   <span style={{ fontSize: "34px", fontWeight: "500" }}>
-                    {slotIncome}
+                    {slotIncome} {slotIncome > 0 && "$"}
                   </span>
                 </div>
                 <div>
@@ -327,6 +364,8 @@ const UserAccount = () => {
                   {" "}
                   <span style={{ fontSize: "34px", fontWeight: "500" }}>
                     {slotIncome + packageIncome + levelIncome + refferalIncome}
+                    {slotIncome + packageIncome + levelIncome + refferalIncome >
+                      0 && "$"}
                   </span>
                 </div>
                 <div>
@@ -358,7 +397,7 @@ const UserAccount = () => {
 
                   <div>
                     <div>
-                      <span className="package-header">{packageIncome}</span>
+                      <span className="package-header">{packageIncome} {packageIncome >0 && "$"}</span>
                     </div>
                     <div></div>
                   </div>
@@ -430,7 +469,7 @@ const UserAccount = () => {
 
                   <div>
                     <div>
-                      <span className="package-header">{slotIncome}</span>
+                      <span className="package-header">{slotIncome} {slotIncome >0 && "$"}</span>
                     </div>
                     <div></div>
                   </div>
@@ -490,17 +529,34 @@ const UserAccount = () => {
         </Row>
       </Row>
 
-      <div className="welcome-container"  style={{ padding: "0px 33px", margin: "0px 0px 40px 0px" }}>
+      <div
+        className="welcome-container"
+        style={{ padding: "0px 33px", margin: "0px 0px 40px 0px" }}
+      >
         <div
-          style={{ background: "transparent",border:"none",display:"flex",flexDirection:"column"}}
+          style={{
+            background: "transparent",
+            border: "none",
+            display: "flex",
+            flexDirection: "column",
+          }}
           className="welcome-inner-div register-inner-div "
         >
-            <p style={{color:"white",fontSize:"25px",fontFamily:"sans-serif",fontWeight:"500"}}>Platform Recent Activity</p>
-          <div
-            className="platform-container-main overscroll-y-container"
-            
+          <p
+            style={{
+              color:"#47a1ff",
+              fontSize: "25px",
+              fontFamily: "sans-serif",
+              fontWeight: "500",
+            }}
           >
-            <div style={{width:"100% !important" }} className="platform-left-container">
+            Platform Recent Activity
+          </p>
+          <div className="platform-container-main overscroll-y-container">
+            <div
+              style={{ width: "100% !important" }}
+              className="platform-left-container"
+            >
               <div className="platform-left-box">
                 <div></div>
                 {platformData.slice(0, visibleItems).map(
@@ -520,11 +576,25 @@ const UserAccount = () => {
                           <div className="new-user-heading">
                             <span>{data.amount} USDT Transfer from </span>
                           </div>
-                          <div className="ID-box">ID {data.fromUserId}</div>
+                          <a
+                            target="_blank"
+                            href={`https://groways.io/users/${data.fromUserId}`}
+                            className="ID-box"
+                          >
+                            ID {data.fromUserId}
+                          </a>
+
                           <div className="new-user-heading">
                             <span>TO</span>
                           </div>
-                          <div className="ID-box">ID {data.toUserId}</div>
+                          <a
+                          
+                            target="_blank"
+                            href={`https://groways.io/users/${data.userId}`}
+                            className="ID-box"
+                          >
+                            ID {data.toUserId}
+                          </a>
                         </div>
                       </div>
 
@@ -549,15 +619,13 @@ const UserAccount = () => {
 
                 {platformData.length > visibleItems && (
                   <div className="see-more-div">
-                    <div className="see-more-button" onClick={showMoreItems}>
+                    <div className="see-more-button" style={{background:"#47a1ff !important"}} onClick={showMoreItems}>
                       <IoEyeSharp /> See More
                     </div>
                   </div>
                 )}
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>

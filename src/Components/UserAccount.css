@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, rgba(65, 65, 65, 1) 67%);
+    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, #47a1ff 67%);
     margin-left: 40px;
     border-radius: 30px;
     margin-top: 20px;
@@ -49,7 +49,7 @@
     padding: 30px 0px;
     color: white;
     /* background-color: #242526; */
-    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, rgba(65, 65, 65, 1) 67%);
+    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, #47a1ff 67%);
     margin-right: 40px;
     border-radius: 30px;
 }
@@ -172,8 +172,8 @@
 
 
 .first-container-box-left {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     border: 1px solid #000000;
     width: 270px !important;
     border-radius: 18px;
@@ -195,7 +195,7 @@
 
 .first-container-box-right b,
 .first-container-box-left b {
-    color: #ffffff;
+    color: #000000;
 }
 
 
@@ -614,12 +614,12 @@ height: 136vh;
 
 .dashboard-boxes {
     background: rgb(119, 55, 255);
-    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, rgba(65, 65, 65, 1) 67%);
+    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, #47a1ff 67%);
 }
 
 .dashboard-boxes-1 {
     background: rgb(119, 55, 255);
-    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, rgba(65, 65, 65, 1) 67%);
+    background: linear-gradient(317deg, rgba(119, 55, 255, 1) 0%, rgba(75, 15, 201, 1) 0%, #47a1ff 67%);
 }
 
 .my-income-box-1 {

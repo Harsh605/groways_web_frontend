@@ -242,9 +242,8 @@ return (
                                             <th>Sponser Wallet Address</th>
                                             {/* <th>Wallet Address</th> */}
                                             {/* <th>Wallet Amount</th> */}
-                                            <th>Joinin Date</th>
+                                            <th>Joining Date</th>
                                             {/* <th>Time</th> */}
-                                            <th >Date & Time</th>
                                             <th >Referral Income</th>
                                             <th >Level Income</th>
                                             <th >Package Upgrade Income</th>
@@ -258,7 +257,8 @@ return (
                                             <tr key={index}>
                                                 <td>{index + 1}</td>
                                                 <td>{row.name}</td>
-                                                <td>{row.userId}</td>
+                                                <td><a  target="_blank"
+                            href={`https://groways.io/users/${row.userId}`}>{row.userId}</a></td>
                                                 <td>{row.address}</td>
                                                 {/* <td>row.SponserID</td> */}
                                                 <td>{row.referBy}</td>
@@ -271,12 +271,11 @@ return (
                        </td> */}
                                                 <td>{new Date(row.createdAt).toLocaleString()}</td>
                                                 {/* <td>{row.time}</td> */}
-                                                <td>{new Date(row.createdAt).toLocaleString()}</td>
-                                                <td>{row.refferalIncome}</td>
-                                                <td>{row.levelIncome}</td>
-                                                <td>{row.packageIncome}</td>
-                                                <td>{row.slotIncome}</td>
-                                                <td>{row.slotIncome + row.packageIncome + row.levelIncome + row.refferalIncome}</td>
+                                                <td>{row.refferalIncome}{row.refferalIncome >0 && "$"}</td>
+                                                <td>{row.levelIncome}{row.levelIncome >0 && "$"}</td>
+                                                <td>{row.packageIncome}{row.packageIncome >0 && "$"}</td>
+                                                <td>{row.slotIncome}{row.slotIncome >0 && "$"}</td>
+                                                <td>{row.slotIncome + row.packageIncome + row.levelIncome + row.refferalIncome} {(row.slotIncome + row.packageIncome + row.levelIncome + row.refferalIncome)> 0 && "$"}</td>
                                             </tr>
                                         ))}
                                     </tbody>

@@ -16,7 +16,7 @@ const App = () => {
       <Routes>
         {/* Routes for the AuthLayout */}
         <Route path='/users/:userId' element={<UserAccount />} />
-        <Route path='/allusers' element={<AllUsers />} />
+        <Route path='/allusers/:address' element={<AllUsers />} />
         <Route path='/referrals/:address' element={<AllReferrals />} />
         <Route path={`/*`} element={<AuthLayout />}>
           <Route path="RegisterinForsageBUSDPage" element={<RegisterinForsageBUSDPage />} />

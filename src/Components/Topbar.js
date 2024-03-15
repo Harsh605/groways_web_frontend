@@ -15,13 +15,12 @@ const Footers = () => {
             </div>
             <div className="top-bar-right md:flex sm:justify-center sm:mx-0">
                 <a href="mailto:contact@Groways.com" target="_blank"><i className="fa-solid fa-envelope"></i></a>
-                <a href="" ><i className="fa-brands fa-facebook"></i></a>
-                <a href="" ><i className="fa-brands fa-linkedin"></i></a>
-                <a href="" ><i className="fa-brands fa-instagram"></i></a>
-                <a href="" ><i className="fa-brands fa-twitter"></i></a>
-                <a href="" ><i className="fa-brands fa-discord"></i></a>
-                <a href="" ><i className="fa-brands fa-quora"></i></a>
-                <a href=""><i className="fa-brands fa-reddit"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61557412407453&mibextid=ZbWKwL" ><i className="fa-brands fa-facebook"></i></a>
+                <a href="https://whatsapp.com/channel/0029VaU7Ncz5q08ZiDzSaK2I" ><i className="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/growaystechnology20242024?igsh=MTFwZzIwcHFmcGR5cQ==" ><i className="fa-brands fa-instagram"></i></a>
+                <a href="https://t.me/+UPe4n9ouKg40YzA1" ><i className="fa-brands fa-telegram"></i></a>
+                <a href="https://youtube.com/@growaysio0327?si=lVp7_6bZ2hJ_EGbg" ><i className="fa-brands fa-youtube"></i></a>
+               
                 {/* <a href="https://twitter.com/Metablocktech"   target="_blank"><i className="fa-brands fa-medium"></i></a> */}
                 {/* <a href="https://twitter.com/Metablocktech"   target="_blank"><i className="fa-brands fa-youtube"></i></a> */}
 

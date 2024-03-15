@@ -4,14 +4,15 @@ import React, { Fragment, useEffect, useRef, useState } from "react";
 // import jsPDF from 'jspdf';
 // import 'jspdf-autotable';
 import { Button, Input, Modal, Container } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Fade } from "react-reveal";
-import { fetchUsersList } from "../api";
+import { fetchTeamInfo, fetchUsersList } from "../api";
 // import { useAccount } from 'wagmi'
 // import { fetchUsersList } from '../../../../api/integrateConfig';
 import "./table.css";
 
 const AllUsers = () => {
+  const { address } = useParams();
   //   const { address} = useAccount();
   const [startDate, setStartDate] = useState(new Date("2000-01-01"));
   const [endDate, setEndDate] = useState(new Date("3000-01-01"));
@@ -32,155 +33,24 @@ const AllUsers = () => {
       // console.log(endDate)
       try {
         let data1 = {
-          startDate: startDate,
-          endDate: endDate,
+          address:address,
         };
-        const response = await fetchUsersList(data1);
-        setData(response.allUsers);
+        const response = await fetchTeamInfo(data1);
+        console.log(response)
+        setData(response.usersDetails);
       } catch (error) {
         console.log(`error in index file of the table `);
       }
     };
     fetchUserDetails();
   }, [startDate, endDate]);
-
-  let filteredData = data;
-  if (searchFromUserName !== "") {
-    filteredData = data.filter((user) =>
-      user.name.toLowerCase().includes(searchFromUserName.toLowerCase())
-    );
-  }
-
-  //   const handleWalletClick = (walletAddress) => {
-  //     setSelectedWallet(walletAddress);
-  //   };
-
-  // const generatePDF = () => {
-  //     const doc = new jsPDF();
-  //     doc.autoTable({ html: '#myTable' });
-  //     doc.save('table_data.pdf');
-  // };
-
-  //   const handleEditClick = (row) => {
-  //     setEditedRow(row);
-  //     setIsEditModalOpen(true);
-  //   };
-
-  //   const handleSaveEdit = () => {
-  //     // Implement logic to save changes to the editedRow data
-  //     console.log('Saving changes:', editedRow);
-  //     // Close the modal
-  //     setIsEditModalOpen(false);
-  //     const updatedData = data.map((row) =>
-  //       row.sno === editedRow.sno ? { ...row, ...editedRow } : row
-  //       // Implement logic to save changes to the editedRow data
-  //       // Here, you need to update the corresponding row in the data array
-  //     );
-  //     setData(updatedData);
-  //     // Close the modal
-  //     setIsEditModalOpen(false);
-
-  //     console.log('Updated Data:', updatedData);
-
-  //   };
-
-  // const [data, setData] = useState(
-  //   [
-  //     { sno: '1', name: 'Tiger Nixon', id: '	#101', SponserID: '61', UserWalletAddress: '	$320,800', SponserWalletAddress: 'male', time: '21:37', wallet: '$2125', joindate: '2023/02/12', Date: '2023/04/12',
-  //   ReferralIncome:'$12', LevelIncome:'$22', PackageIncome:'$25', SlotIncome:'$20,', TotalIncome:'$5' },
-  //   ]
-  // )
-  //  WalletAddress: 'New York',
-
-  //   const [ascendingOrder, setAscendingOrder] = useState(true);
-
-  // const handleDateHeaderClick = () => {
-  //   const sortedData = [...data].sort((a, b) => {
-  //     const dateA = new Date(a.Date);
-  //     const dateB = new Date(b.Date);
-  //     return ascendingOrder ? dateA.getTime() - dateB.getTime() : dateB.getTime() - dateA.getTime();
-  //   });
-
-  //   setData(sortedData);
-  //   setAscendingOrder(!ascendingOrder);
-  // };
-
-  const statusOptions = ["Active", "Inactive", "Block"];
-
-  // const filteredData = data.filter((row) => {
-  //   const rowDate = new Date(row.Date);
-  //   const fromDateObj = fromDate ? new Date(fromDate) : null;
-  //   const toDateObj = toDate ? new Date(toDate) : null;
-
-  //   const statusFilter =
-  //     selectedStatus === '' ? true : row.status.toLowerCase() === selectedStatus.toLowerCase();
-
-  //   return (
-  //     statusFilter &&
-  //     rowDate >= (fromDateObj || rowDate) &&
-  //     rowDate <= (toDateObj || rowDate) &&
-  //     row.Date.toLowerCase().includes(searchTerm.toLowerCase()) &&
-  //     row.name.toLowerCase().includes(searchFromUserName.toLowerCase())
+console.log(data)
+  // let filteredData = data;
+  // if (searchFromUserName !== "") {
+  //   filteredData = data.filter((user) =>
+  //     user.name.toLowerCase().includes(searchFromUserName.toLowerCase())
   //   );
-  // });
-
-  // const tableRef = useRef(null);
-
-  //   const copyTable = () => {
-  //     const range = document.createRange();
-  //     range.selectNode(tableRef.current);
-  //     window.getSelection().addRange(range);
-  //     document.execCommand('copy');
-  //     window.getSelection().removeAllRanges();
-  //   };
-
-  //   const handlePrint = () => {
-  //     window.print();
-  //   };
-
-  //   const downloadTableAsCSV = () => {
-  //     const table = document.getElementById('myTable');
-
-  //     if (!table) {
-  //       console.error('Table not found');
-  //       return;
-  //     }
-
-  // const rows = table.querySelectorAll('tr');
-  // const csvData = [];
-
-  // rows.forEach((row) => {
-  //     const rowData = [];
-  //     const cells = row.querySelectorAll('td, th');
-
-  //     cells.forEach((cell) => {
-  //         rowData.push(cell.innerText);
-  //     });
-
-  //     csvData.push(rowData.join(','));
-  // });
-
-  // const csvContent = csvData.join('\n');
-  // const blob = new Blob([csvContent], { type: 'text/csv' });
-
-  // const url = URL.createObjectURL(blob);
-
-  // const a = document.createElement('a');
-  // a.href = url;
-  // a.download = 'table_data.csv';
-  // document.body.appendChild(a);
-  // a.click();
-  // document.body.removeChild(a);
-  // URL.revokeObjectURL(url);
-
-  //   const handleReset = () => {
-  //     setSearchFromUserName('');
-  //     setSelectedStatus('');
-  //     setStartDate(new Date("2000-01-01"))
-  //     setEndDate(new Date("3000-01-01"))
-  //     // setFromDate('');
-  //     // setToDate('');
-  //   };
+  // }
 
   return (
     <Fragment>
@@ -219,17 +89,18 @@ const AllUsers = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {filteredData.map(
+                      {data.map(
                         (
                           row,
                           index // to be edited  ....index+1 is set as td for S.no
                         ) => (
                           <tr key={index}>
                             <td>{index + 1}</td>
-                            <td>{row.name}</td>
-                            <td>{row.userId}</td>
-                            <td>{row.address}</td>
-                            <td>{row.referBy}</td>
+                            <td>{row.user.name}</td>
+                            <td><a  target="_blank"
+                            href={`https://groways.io/users/${row.user.userId}`}>{row.user.userId}</a></td>
+                            <td>{row?.user?.address}</td>
+                            <td>{row?.user?.referBy}</td>
                             {/* <td>row.SponserIDfill later</td> */}
                             {/* <td>{row.wallet}</td> */}
                             {/* <td
@@ -239,17 +110,20 @@ const AllUsers = () => {
                             {row.WalletAddress}
                           </td> */}
                             {/* <td>{row.time}</td> */}
-                            <td>{row.refferalIncome}</td>
-                            <td>{row.levelIncome}</td>
-                            <td>{row.packageIncome}</td>
-                            <td>{row.slotIncome}</td>
+                            <td>{row.user.refferalIncome}{row.user.refferalIncome >0 && "$"}</td>
+                            <td>{row.user.levelIncome}{row.user.levelIncome  >0 && "$"}</td>
+                            <td>{row.user.packageIncome}{row.user.packageIncome >0 && "$"}</td>
+                            <td>{row.user.slotIncome}{row.user.slotIncome >0 && "$"}</td>
                             <td>
-                              {row.slotIncome +
-                                row.packageIncome +
-                                row.levelIncome +
-                                row.refferalIncome}
+                              {row.user.slotIncome +
+                                row.user.packageIncome +
+                                row.user.levelIncome +
+                                row.user.refferalIncome}{(row.user.slotIncome +
+                                  row.user.packageIncome +
+                                  row.user.levelIncome +
+                                  row.user.refferalIncome)>0 && "$"}
                             </td>
-                            <td>{new Date(row.createdAt).toLocaleString()}</td>
+                            <td>{new Date(row.user.createdAt).toLocaleString()}</td>
                             {/* <td>
                             <Button color='primary' onClick={() => handleEditClick(row)}>
                               Edit

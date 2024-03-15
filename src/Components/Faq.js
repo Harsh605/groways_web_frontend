@@ -24,8 +24,7 @@ const Faq = () => {
                   {/* <h2 className='heading_color_light'>The Long-Term Approach</h2> */}
                   <h2 className="&quot;bigHeading pt-4 font-bold xl:text-5xl lg:text-4xl md:text-4xl text-3xl lg:leading-[2.5rem] 2xl:leading-[3.7rem]&quot; restContent" style={{ display: "flex", justifyContent: "center" }}><span className="text-transparent bg-clip-text bg-gradient-to-br from-[#4361EE] to-[#4CC9F0] main_headings_center">  FAQs</span></h2>
                   <p style={{ marginBottom: "30px" }} className="text-white text-center mb-5 text-lg font-bold">
-                    Use the contract information below to add the DFI token to
-                    your wallet.
+                    Use the Company information below to Invest in us.
                   </p>
                 </div>
               </Grid>
@@ -70,7 +69,7 @@ const Faq = () => {
                                 // color:"#f3f4f6"
                               }}
                             >
-                              Q: What Is ARB Blockchain?
+                              Q: What is Groways Technology (groways.io) ? 
                             </Typography>
                           </AccordionSummary>
                           <AccordionDetails>
@@ -85,7 +84,7 @@ const Faq = () => {
                                 fontFamily: "Cabin"
                               }}
                             >
-                              A: Arbitrum is a Layer 2 scaling solution for the Ethereum blockchain that powers fast smart contract transactions while reducing transaction costs. Layer 2 solutions can scale the base Layer 1 blockchain by delegating complex computational tasks, such as transaction processing and data storage to the second chain. In short, the Layer 2 blockchain executes the smart contract, and the Layer 1 blockchain stores the data.
+                              Groways is a decentralized, blockchain-based platform that enables peer-to-peer transactions of cryptocurrencies by linking users' wallets to wallets without the use of smart contracts like other systems.
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
@@ -111,7 +110,7 @@ const Faq = () => {
                                 // color:"#f3f4f6"
                               }}
                             >
-                              Q: How do I participate in a DFI presale event?
+                              Q: ग्रोवेज़ टेक्नोलॉजी क्या है ?
                             </Typography>
                           </AccordionSummary>
                           <AccordionDetails>
@@ -126,11 +125,7 @@ const Faq = () => {
                                 fontFamily: "Cabin"
                               }}
                             >
-                              A: To participate in a DFI presale event, you
-                              typically need to register and complete a KYC/AML
-                              (know your customer/anti-money laundering)
-                              verification process. Once approved, you can then
-                              purchase tokens using the accepted payment methods.
+                             ग्रोवेज़ एक विकेन्द्रीकृत, ब्लॉकचेन-आधारित प्लेटफ़ॉर्म है जो अन्य सिस्टम की तरह स्मार्ट कॉन्ट्रैक्ट के उपयोग के बिना उपयोगकर्ताओं के वॉलेट को वॉलेट से जोड़कर क्रिप्टोकरेंसी के पीयर-टू-पीयर लेनदेन को सक्षम बनाता है।
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
@@ -155,8 +150,8 @@ const Faq = () => {
                                 lineHeight: 1.5
                               }}
                             >
-                              Q: What are the benefits of investing in a DFI
-                              presale?
+                              Q: Groways প্রযুক্তি কি ?
+
                             </Typography>
                           </AccordionSummary>
                           <AccordionDetails>
@@ -168,13 +163,7 @@ const Faq = () => {
                               fontSize: "14px",
                               fontFamily: "Cabin"
                             }}>
-                              A: Investing in DFI presale can provide benefits
-                              such as getting DFI tokens at a discounted price,
-                              participating in early access to the protocol,
-                              whitelisting for hosting a node or becoming a
-                              validator in DFI Blockchain and potentially
-                              earning higher returns when the protocol is
-                              successful.
+                              Groways হলো বিকেন্দ্রীকৃত, ব্লকচেইন-ভিত্তিক প্ল্যাটফর্ম যা ক্রিপ্টোকারেন্সির পিয়ার-টু-পিয়ার লেনদেনের সুবিধার্থে অন্যান্য সিস্টেম এর মত স্ম্যার্ট কন্ট্রাক্ট ব্যাবহার না করে ব্যবহারকারীদের ওয়ালেট টু ওয়ালেট ডিস্ট্রিবিউশন করে যেটা অন্যান্য সিস্টেম থেকে সবচাইতে সুরক্ষিত।এটি  ব্লকচেইনে কাজ করে এবং ব্যবহারকারীদের একটি নেটওয়ার্ক মার্কেটিং সিস্টেমে অংশগ্রহণ করে ক্রিপ্টোকারেন্সি উপার্জন করতে সক্ষম করে।
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
@@ -198,7 +187,7 @@ const Faq = () => {
                                 lineHeight: 1.5
                               }}
                             >
-                              Q: What are the risks of investing in a presale?
+                              Q: Can there be cheating in Groways ?
                             </Typography>
                           </AccordionSummary>
                           <AccordionDetails>
@@ -210,10 +199,7 @@ const Faq = () => {
                               fontSize: "14px",
                               fontFamily: "Cabin"
                             }}>
-                              A: The risks of investing in a presale include
-                              regulatory uncertainty, market volatility, technical
-                              challenges, and the possibility that the protocol
-                              may not meet its goals.
+                             You cannot be cheated in Groways because here there is 100% income distribution, there is no withdrawal condition and there is direct wallet to wallet transfer of income and it is in everyone's wallets.
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
@@ -237,8 +223,7 @@ const Faq = () => {
                                 lineHeight: 1.5
                               }}
                             >
-                              Q: What is the minimum investment amount for a
-                              presale?
+                              Q: How to make money in Groways ?
                             </Typography>
                           </AccordionSummary>
                           <AccordionDetails>
@@ -250,11 +235,7 @@ const Faq = () => {
                               fontSize: "14px",
                               fontFamily: "Cabin"
                             }}>
-                              A: The minimum investment amount for a presale can
-                              vary depending on the protocol. Some presales may
-                              have a high minimum investment amount, while others
-                              may have a lower minimum to allow smaller investors
-                              to participate.
+                              In Groways you can generate good income by making your partners and referrals, you can generate good income by building a team and here you also get support from your upline team.
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
@@ -279,7 +260,7 @@ const Faq = () => {
                                 lineHeight: 1.5
                               }}
                             >
-                              Q: How are presale funds typically used?
+                              Q: How much does it cost to join Groways ?
                             </Typography>
                           </AccordionSummary>
                           <AccordionDetails>
@@ -291,10 +272,7 @@ const Faq = () => {
                               fontSize: "14px",
                               fontFamily: "Cabin"
                             }}>
-                              A: Presale funds are typically used to fund the
-                              development and launch of the protocol. This can
-                              include expenses such as salaries for the
-                              development team, marketing costs, and legal fees.
+                             You can join Groways with just 11 USDT, along with that you have to charge a gas piece, you have to keep a minimum of 60 cents as a gas piece and you can earn lifetime income by joining here.
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
@@ -319,7 +297,7 @@ const Faq = () => {
                                 lineHeight: 1.5
                               }}
                             >
-                              Q: When will presale investors receive their tokens?
+                              Q: Can you earn money in Groways even without referrals ? 
 
                             </Typography>
                           </AccordionSummary>
@@ -332,7 +310,7 @@ const Faq = () => {
                               fontSize: "14px",
                               fontFamily: "Cabin"
                             }}>
-                              A: The timeline for receiving presale tokens can vary depending on the protocol. Some protocols may distribute tokens immediately after the presale, while others may have a vesting schedule or lock-up period.
+                              Yes, Slots is a program of Groways which generates global income and gives us global income even without referral.
                             </Typography>
                           </AccordionDetails>
                         </Accordion>
@@ -357,7 +335,7 @@ const Faq = () => {
                                 lineHeight: 1.5
                               }}
                             >
-                              Q: Can presale investors sell their tokens?
+                              Q: Can Groways be closed ?
 
                             </Typography>
                           </AccordionSummary>
@@ -370,7 +348,7 @@ const Faq = () => {
                               fontSize: "14px",
                               fontFamily: "Cabin"
                             }}>
-                              A: Presale tokens may be subject to lock-up periods or vesting schedules, which restrict the ability to sell the tokens immediately. Once the lock-up period or vesting schedule has ended, investors may be able to sell their tokens on a cryptocurrency exchange.
+                              Groways can't stop. Because Groways is a smart contract.And smart contracts are developed on blockchain.And whatever transactions happen here are from wallet to wallet and 100% distribution.
                             </Typography>
                           </AccordionDetails>
                         </Accordion>

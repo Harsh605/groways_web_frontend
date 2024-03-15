@@ -8,7 +8,7 @@ const Accountpreview = () => {
 
   const handlePreview = () => {
     if (userId.trim() !== "") {
-      if (parseInt(userId) >= 502) {
+      if (parseInt(userId) >= 501) {
         // Check if userId is greater than or equal to 502
         navigate(`/users/${userId}`);
       } else {
