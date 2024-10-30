@@ -9,15 +9,46 @@ const RegisterinForsageBUSD = () => {
 
   const { address, isConnected } = useAccount();
   const [open, setOpen] = useState(false);
+  const [countdown, setCountdown] = useState("");
 
   const handleOpenBuyPopup = () => {
     setOpen(true);
   };
+  useEffect(() => {
+    // Set the launch date
+    const launchDate = new Date("2024-1-01T09:00:00");
+
+    const interval = setInterval(() => {
+      const now = new Date();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        setCountdown("Website has launched!");
+        return;
+      }
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Format the countdown string
+      const countdownString = `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
+      setCountdown(countdownString);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <div>
         <Show />
       </div>
+      <p style={{fontSize:"25px",textAlign:"center",color:"red"}}>Slot is going to launch in {countdown}</p>
       <div className="welcome-container">
         <div className="welcome-inner-div register-inner-div">
           <div className="welcome-left-div register-left-div">
