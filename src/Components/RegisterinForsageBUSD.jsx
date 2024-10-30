@@ -16,7 +16,7 @@ const RegisterinForsageBUSD = () => {
   };
   useEffect(() => {
     // Set the launch date
-    const launchDate = new Date("2024-1-01T09:00:00");
+    const launchDate = new Date("2024-10-01T09:00:00");
 
     const interval = setInterval(() => {
       const now = new Date();
